@@ -1,0 +1,18 @@
+body{
+  width: 1024px;
+  height: 768px;
+}
+div {
+  font-size: 40pt;
+  font-weight: bold;
+}
+.text {
+  color: rgb(70, 69, 71);
+  font-family: Arial, sans-serif;
+
+}
+.quote {
+  color: rgb(57, 194, 215);
+  font-family: Helvetica, sans-serif;
+  
+}

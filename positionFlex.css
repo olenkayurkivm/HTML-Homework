@@ -1,0 +1,82 @@
+body {
+  width: 1003px;
+  height: 599px;
+  display: flex;
+  flex-direction: row;
+  
+}
+nav{
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+}
+ul {
+  background-color: pink;
+  display:flex;
+  flex-direction: column;
+  
+}
+li {
+  background-color: violet;
+
+}
+header {
+  background-color: red;
+  display: flex;
+  align-self: stretch;
+  flex-basis: 20%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  
+ 
+}
+aside {
+   background-color: grey;
+  display: flex;
+  align-self: stretch;
+}
+.image {
+   background-color: black;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-basis: 30%;
+  
+}
+img {
+  display: inline-block;
+  width: 15%;
+  overflow: hidden;
+}
+.fsection {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 40%;
+  
+  
+}
+.firstA {
+  background-color: yellow;
+  display: flex;
+  flex-basis: 50%;
+  
+}
+.secondA {
+  background-color: green;
+  display: flex; 
+  flex-basis: 50%;
+}
+footer {
+   background-color: orange;
+  flex-basis: 15%;
+   
+  
+}

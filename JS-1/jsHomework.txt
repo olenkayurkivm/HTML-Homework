@@ -1,0 +1,83 @@
+
+Variables
+https://learn.javascript.ru/variables
+
+alert, prompt, confirm
+https://learn.javascript.ru/uibasic
+
+Console and devtools in Chrome
+https://habrahabr.ru/post/114483/
+https://learn.javascript.ru/debugging-chrome
+
+Operators
+https://learn.javascript.ru/operators
+https://learn.javascript.ru/comparison
+
+Data Types
+https://learn.javascript.ru/types-intro
+
+If statment
+https://learn.javascript.ru/ifelse
+
+Logical Operators
+https://learn.javascript.ru/logical-ops
+
+Loop
+https://learn.javascript.ru/while-for
+
+Switch
+https://learn.javascript.ru/switch
+
+Function
+https://learn.javascript.ru/function-basics
+https://learn.javascript.ru/function-declaration-expression
+https://learn.javascript.ru/recursion
+https://learn.javascript.ru/named-function-expression
+
+Digets
+https://learn.javascript.ru/number
+
+String
+https://learn.javascript.ru/string
+
+Objects
+https://learn.javascript.ru/object
+https://learn.javascript.ru/object-for-in
+https://learn.javascript.ru/object-reference
+
+Array
+https://learn.javascript.ru/array
+
+Array methods
+https://learn.javascript.ru/array-methods
+https://learn.javascript.ru/array-iteration
+
+Datetime object
+
+
+Ось тут
+
+https://www.w3resource.com/javascript-exercises/javascript-basic-exercises.php
+
+потренуйтесь
+
+
+1. https://github.com/mkozachok/js-adv/blob/master/lection-3/practice/string.html
+2. https://github.com/mkozachok/js-adv/blob/master/lection-3/practice/remember.html (додаткове, буде +)
+
+3. На методи масива https://github.com/mkozachok/js-adv/blob/master/lection-7/practice/array-methods.html
+
+
+Також є завдання для модуля
+
+https://github.com/mkozachok/js-adv/tree/master/tasks/shop
+
+
+Вирішив підсумувати завдання на понеділок
+
+http://kolorovo.com.ua/2018/01/19/js-3-homework/
+
+
+звітутйте тут
+
+https://docs.google.com/spreadsheets/d/10RQDvYm_PzNJEZ9ygGFHLy7x0DlorIO3asu57G-BHPc

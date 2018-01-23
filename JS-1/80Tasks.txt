@@ -1,0 +1,600 @@
+// 1. Write a JavaScript program to display the current day and time in the following format.
+
+ var date = new Date();
+  var day = date.getDay();
+  var week = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+  console.log("Today is : " + week[day]);
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  var ampm = (hour >= 12)? "PM":"AM";
+  hour = (hour >= 12)? hour - 12: hour;
+console.log("Current Time : "+hour + ampm + " : " + minute + " : " + second);
+ 
+
+// 2. Write a JavaScript program to print the contents of the current window. 
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Print he contents of the current window</title>
+</head>
+<body>
+<p>The contents of the current window</p>
+<script>
+function print(){
+window.print();
+}
+</script>
+</body>
+</html> 
+
+
+// 3. Write a JavaScript program to get the current date. 
+
+var date = new Date();
+var dd = date.getDate();
+
+var mm = date.getMonth()+1; 
+var yyyy = date.getFullYear();
+if(dd<10) 
+{
+    dd='0'+dd;
+} 
+
+if(mm<10) 
+{
+    mm='0'+mm;
+} 
+date = mm+'-'+dd+'-'+yyyy;
+console.log(date);
+date1 = date.replace(/-/g, "/");
+console.log(date1);
+
+
+// 4. Write a JavaScript program to find the area of a triangle
+
+function square(a, b, c){
+var p = (a + b + c)/2;
+var s =  Math.sqrt(p*((p-a)*(p-b)*(p-c)));
+return s;
+}
+console.log(square(5, 6, 7));
+
+
+//5. Write a JavaScript program to rotate the string 'w3resource' in right direction
+
+<!DOCTYPE html>
+  <html> 
+  <head>
+  <title>JavaScript basic animation</title>
+  <script>
+    function animate(id) {
+    var element = document.getElementById(id);
+    var textNode = element.childNodes[0];
+    var text = textNode.data;
+
+setInterval(function () {
+ text = text[text.length - 1] + text.substring(0, text.length - 1);
+ textNode.data = text;
+}, 150);
+}
+  </script>
+  </head> <body onload="animate('string')"
+  <pre id="string">w3resource</pre>
+  </body> 
+  </html>
+
+
+//6. Write a JavaScript program to determine whether a given year is a leap year
+
+year = window.prompt("Enter a Year : ");
+leapOrNot = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+alert(leapOrNot);
+
+
+// 7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050
+
+var weekday = new Array(7);
+weekday[0] =  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+for (var year = 2014; year <= 2050; year++)
+    {
+    var d = new Date(year, 0, 1);
+    if ( d.getDay() === 0 )
+        console.log("1st January is being a " + weekday[0]+" in "+year);
+    }
+
+
+// 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. 
+
+var userNum = prompt('Enter the number from 1 to 10');
+ var ourNum =(Math.random() * 10);
+ if (userNum == ourNum)
+   console.log('Matched');
+  else
+   alert('Not matched');
+
+
+// 9. Write a JavaScript program to calculate days left until next Christmas. 
+
+date=new Date();
+var christmas=new Date(date.getFullYear(), 11, 25);
+var day=1000*60*60*24;
+console.log((christmas.getTime()-date.getTime())/day+
+" days to Christmas!");
+
+
+// 10. Write a JavaScript program to calculate multiplication and division of two numbers
+
+html> 
+<head>
+<meta charset=utf-8 />
+<title>JavaScript program to calculate multiplication and division of two numbers </title>
+</head>
+<body>
+<form>
+Input : <input type="text" id="firstNumber" /><br>
+Input : <input type="text" id="secondNumber" /><br>
+<input type="button" onClick="multiplyBy()" Value="Multiply" />
+<input type="button" onClick="divideBy()" Value="Divide" />
+</form>
+<p>The Result is : <br>
+<span id = "result"></span>
+<script>
+  function multiplyBy()
+{
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = num1 * num2;
+}
+
+function divideBy() 
+{ 
+        num1 = document.getElementById("firstNumber").value;
+        num2 = document.getElementById("secondNumber").value;
+document.getElementById("result").innerHTML = num1 / num2;
+}
+</script>
+</p>
+</body>
+</html>
+
+
+// 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit. 
+
+function cToF(c) 
+{
+  var cToFahr = Math.ceil(c * 9 / 5 + 32);
+  console.log(c+'\xB0C is ' + cToFahr + ' \xB0F.');
+}
+
+function fToC(f) 
+{
+  var fToCel = Math.ceil((f - 32) * 5 / 9);
+  console.log(f+'\xB0F is ' + fToCel + '\xB0C.');
+} 
+cToF(36.6);
+fToC(451);
+
+
+// 12. Write a JavaScript program to get the website URL (loading page).
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>get the website URL</title>
+</head>
+<body>
+  <script>
+    console.log(document.URL);
+  </script>
+</body>
+</html>
+
+
+// 13. Write a JavaScript exercise to create a variable using a user-defined name. 
+
+var myName = 'myVariable';
+var v = 120;
+this[myName] = v;
+console.log(this[myName]);
+
+
+// 14. Write a JavaScript exercise to get the extension of a filename.
+
+filename = "aaaa.html"
+console.log("Extension : "+filename.split('.').pop());
+filename = "aaaa.css"
+console.log("Extension : "+filename.split('.').pop());
+
+
+// 15. Write a JavaScript program to get the difference between a given number and 13
+
+
+function getDiff(num)
+ {
+    if (num <= 13){
+        return 13 - num;
+    }
+    else {
+        return 2*(num - 13);
+    }
+ }
+console.log(getDiff(7))
+console.log(getDiff(555))
+
+
+// 16. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum. 
+
+function getSum (x, y) {
+  if (x !== y) {
+    return (x + y);
+    } 
+   else
+   {
+    return 3*(x + y);
+   }
+ }
+console.log(getSum(33, 33));
+console.log(getSum(30, 33));
+
+
+// 17. Write a JavaScript program to compute the absolute difference between a specified number and 19. 
+
+function getDiff(num) {
+  if (num <= 19) {
+    return (19-num);
+    }
+  else {
+     return (num - 19) * 3;
+    }
+}
+console.log(getDiff(17));
+console.log(getDiff(33));
+
+
+// 18. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50. 
+
+function check(num1, num2) 
+{
+  if ((num1 == 50 || num2 == 50) || (num1 + num2 == 50)){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(check(50, 20))
+console.log(check(30, 20))
+console.log(check(30, 30))
+
+
+// 19. Write a JavaScript program to check a given integer is within 20 of 100 or 400.
+
+function check (num) {
+  return (100 - num < 20 ||
+	 400 - num < 20);
+}
+
+console.log(check(40));
+console.log(check(80));
+console.log(check(100));
+console.log(check(399));
+
+
+//20. Write a JavaScript program to check from two given integers, if one is positive and one is negative. 
+
+function check(num1, num2)
+{
+  if ((num1 < 0 && num2 > 0) || num1 > 0 && num2 < 0) {
+    return true;
+  }
+  else  {
+    return false;
+  }
+}
+console.log(check(100, 99));
+console.log(check(-100, 99));
+console.log(check(-99, -99));
+
+
+// 21. Write a JavaScript program to create a new string adding "Py" in front of a given string.
+
+function check(str) {
+  if (str.substring(0, 2) == 'Py') {
+    return str;
+  }
+  else{
+    return "Py"+str;
+  }
+}
+
+console.log(check("Pyro"));
+console.log(check("maka"));
+
+
+// 22. Write a JavaScript program to remove a character at the specified position of a given string and return the new string.
+
+function transform(str, i) {
+ return str.substring(0, i)+ str.substring(i + 1, str.length);
+ }
+console.log(transform("Oksana",2));
+console.log(transform("Ivan",3));
+
+
+// 23. Write a JavaScript program to create a new string from a given string changing the position of first and last characters. 
+
+function reverse(str) {
+  if (str.length >= 1){
+  return (str.charAt(str.length - 1)) + str.substring(1, str.length - 1) + str.charAt(0);
+}
+  else {
+    return false;
+  }
+}
+console.log(reverse('apple'));
+console.log(reverse('puzzle'));
+console.log(reverse(''));
+
+
+// 24. Write a JavaScript program to create a new string from a given string with the first character of the given string added at the front and back.
+
+function transform(str){
+  subStr = str.substring(0,1);
+  return subStr + str + subStr;
+}
+console.log(transform('apple'));
+console.log(transform('dab'));
+
+
+// 25. Write a JavaScript program check if a given positive number is a multiple of 3 or a multiple of 7.
+
+function check(num) {
+  if (num % 3 === 0 || num % 7 === 0) {
+    return true;
+  } 
+  else {
+    return false;
+  }
+}
+
+console.log(check(21));
+console.log(check(18));
+console.log(check(17));
+
+
+// 26. Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. 
+
+unction reverse(str) {
+  if (str.length >= 3){
+     last = str.substring(str.length-3);
+   return last + str + last;
+}
+  else {
+    return false;
+  }
+}
+console.log(reverse('apple'));
+console.log(reverse('puzzle'));
+console.log(reverse('pu'));
+
+
+// 27. Write a JavaScript program to check if a string starts with 'Java' and false otherwise. 
+
+function check(str)
+{
+  if (str.length >= 4){
+  javaOrNot = str.substring(0, 4);
+  if (javaOrNot == 'Java') 
+  {
+    return true;
+  }
+   else 
+   {
+    return false;
+  }
+  }
+  return false;
+}
+
+console.log(check("JavaScript"));
+console.log(check("Ruby"));
+console.log(check("Java"));
+
+
+// 28. Write a JavaScript program to check if two given integer values are in the range 50..99 (inclusive). 
+
+function check(num1, num2) {
+  if ((num1 >= 50 && num1 <= 99) || (num2 >= 50 && num2 <= 99)){
+    return true;
+  } 
+  else  {
+    return false;
+  }
+}
+console.log(check(49, 99));
+console.log(check(50, 99));
+console.log(check(60, 100));
+
+
+// 29. Write a JavaScript program to check if three given integer values are in the range 50..99 (inclusive). 
+
+function check(a, b, c) {
+  return (a >= 50 && a <= 99) || (b >= 50 && b <= 99) || (c >= 50 && c <= 99);
+}
+console.log(check(50, 99, 99));
+console.log(check(45, 45, 45));
+console.log(check(45, 50, 99));
+console.log(check(99, 99, 99));
+
+
+// 30. Write a JavaScript program to check if a string "Script" presents at 5th (index 4) position in a given string, 
+
+function transform(str)
+{
+  if (str.substring(4) == 'Script') 
+    {
+    
+   return str.substring(0, 4);
+  }
+  return str;
+}
+
+console.log(transform("JavaScript"));
+console.log(transform("MyScript"));
+
+
+// 31. Write a JavaScript program to find the largest of three given integers.
+
+function getMax(a, b, c) {
+  max = 0;
+  if (a >= b) {
+    max = a;
+  } else {
+    max = b;
+  }
+  if (c >= max) {
+    max = c;
+  }
+  return max;
+}
+console.log(getMax(100,200,300));
+console.log(getMax(-100,-200,-300));
+console.log(getMax(0,0,0));
+
+
+// 32. Write a JavaScript program to find a value which is nearest to 100 from two different given integer values. 
+
+function check(x, y) {
+  x1 = Math.abs(x - 100);
+  y1 = Math.abs(y - 100);
+
+  if (x1 < y1){
+    return x;
+  }
+  if (y1 < x1){
+    return y;
+  }
+  else {
+    return "Cant find";
+}
+}
+console.log(check(85, 80));
+console.log(check(-40, -35));
+console.log(check(85, 85));
+
+
+// 33. Write a JavaScript program to check if two numbers are in range 40..60 or in the range 70..100 inclusive.
+
+function check(a, b) {
+  if ((a >= 40 && a <= 60 && b >= 40 && b <= 60) 
+      || 
+      (a >= 70 && a <= 100 && b >= 70 && b <= 100))
+     {
+    return true;
+     } 
+    else 
+     {
+    return false;
+  }
+}
+
+console.log(check(44, 56));
+console.log(check(70, 95));
+console.log(check(50, 89));
+
+
+// 35. Write a JavaScript program to check a given string contains 2 to 4 numbers of a specified character. 
+
+function check(str, char){
+  var count = 0;
+  for (var i = 0; i < str.length; i++){
+    if (str.charAt(i) == char) {
+      count++;
+    }
+  }
+  return (count >= 2 && count <= 4);
+}
+
+console.log(check("ABBA", "B"));
+console.log(check("aman", "a"));
+console.log(check("Hatamatata", "a"));
+
+
+// 36. Write a JavaScript program to check if the last digit of the three given positive integers is same.
+
+function check(x, y, z){
+     return (x % 10 == y % 10 && y % 10 == z % 10 && x % 10 == z % 10);
+   }
+console.log(check(110, 220, 330));
+console.log(check(15, 25, 30));
+
+
+// 37. Write a JavaScript program to create new string with first 3 characters are in lower case. If the string length is less than 3 convert all the characters in upper case.  
+
+function transform(str) {
+  if (str.length <= 3) {
+    return str.toUpperCase();
+  } 
+  return str.substring(0, 3).toLowerCase() + str.substring(3);
+}
+console.log(transform("c"));
+console.log(transform("JAVascript"));
+
+
+// 38. Write a JavaScript program to check the total marks of a student in various examinations.
+
+function checkMark(mark,is_exam)
+  {
+  if (is_exam) {
+    return mark >= 90;
+  }
+ return (mark >= 89 && mark <= 100);
+ }
+
+console.log(checkMark("78", " "));
+console.log(checkMark("89", "true "));
+console.log(checkMark("99", "true "));
+
+
+// 39. Write a JavaScript program to compute the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80. 
+
+function sum(num1, num2) 
+ {
+  var sum = num1 + num2;
+  if (sum >= 50 && sum <= 80) {
+    return 65;
+  }
+   else {
+  return 80;
+   }
+}
+
+console.log(sum(25,25));
+console.log(sum(70,25));
+
+
+// 40. Write a JavaScript program to check from two given integers if either one is 8 or their sum or difference is 8. 
+
+function check(x, y) {
+
+  if ((x === 8 || y === 8)|| x + y == 8 || Math.abs(x - y) == 8)
+  {
+    return true;
+  }
+
+  return false;
+}
+
+console.log(check(8, 8));
+console.log(check(7, 8));
+console.log(check(4, 4));
+console.log(check(16, 8));

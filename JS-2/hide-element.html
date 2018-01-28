@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hide element</title>
+</head>
+<body>
+    <p id="text">Kiev is the capital of Ukraine</p>
+    <button  onclick="hide('text');">Hide text</button>   
+    <button id="button" onclick="hideMe('button');">Hide me</button>    
+    <script>
+        // 1. При кліку на кнопку - сховати текст.
+function hide(elementId){
+ document.getElementById('text').style.display = 'none';
+        }
+        // Створити кнопку, яка сама себе ховає при кліку.
+function hideMe(elementId){
+ document.getElementById('button').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+

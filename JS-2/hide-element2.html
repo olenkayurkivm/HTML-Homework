@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hide element</title>
+</head>
+<body>
+    <p id="text">Kiev is the capital of Ukraine</p>
+    <button  onclick="showHide('text');">Hide text</button>     
+    <script>
+        // 2. При кліку на кнопку ховати/показувати текст.
+function showHide (elementId){
+           var textField = document.getElementById("text");
+	       textField.hidden =  !textField.hidden;
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .red {
+        color: red;
+      }
+      .device {
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to <span>iPhone</span> Store</h1>
+    <h2>Say hello to the future!</h2>
+    <ul class="device">
+      <li>
+        <h4>iPhone X</h4>
+        <ul>
+          <li>The future of smartphones</li>
+          <li>Price: <span>1299$</span></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="device">
+      <li>
+        <h4>iPhone 8</h4>
+        <ul>
+          <li>the new generation of iPhone</li>
+          <li>Price: <span>700$</span></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="device">
+      <li>
+        <h4>iPhone 7</h4>
+        <ul>
+          <li>the new generation of iPhone</li>
+          <li>Price: <span>600$</span></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <h4>iPhone SE</h4>
+        <ul>
+          <li>small and smart one</li>
+          <li>Price: <span>500$</span></li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+        function getElements (){
+        var elements=[];
+            document.body.childNodes.forEach(function (element){
+                if(element.tagName == 'UL')
+                    elements.push(element);
+                });
+            return elements;
+      }
+      // !Увага! Все зробити джаваскріптом без використання метода querySelector
+      //1. Знайти елементи з описом продукта та виправити, щоб текст починався з великої букви.
+         var iphones = getElements();
+         for (var i = 0; i < iphones.length; i++) {
+            var element =  iphones[i].getElementsByTagName('li')[1];
+            element.innerText = capitalize(element.innerText);
+            }
+        function capitalize(str) {
+         return str.charAt(0).toUpperCase()+str.substring(1);
+        }
+      //2. Виділити ціну червоним кольором (додати класс red до елемента)
+         for (var i = 0; i < iphones.length; i++) {        
+            iphones[i].getElementsByTagName("li")[2].setAttribute('class','red');
+         }
+      //3. Додати новий блок з елементами про iPhone 5
+      // назва - iPhone 5
+      // опис - Our Hero
+      // ціна - 300$
+        document.body.innerHTML +='<ul class="device">'+
+            "<li>"+
+            " <h4>iPhone 5</h4>"+
+            " <ul>"+
+            " <li>Our Hero</li>"+
+            ' <li>Price: <span>300$</span></li>'+
+            " </ul>"+
+            "</li>"+
+            "</ul>";
+       //4. Перевірити чи всі блоки мають клас device, якщо немає то додати його.
+        var children = document.body.children;
+            for (var i = 0; i < children.length; i++) {
+                if (children[i].tagName == "UL") {
+                    var classList = children[i].classList;
+                    if (classList.contains('device')) {
+                    continue;
+                    }
+                classList.add('device');
+             }
+            }
+       //5. Замінити всі слова iPhone на Android
+            var android = document.getElementsByTagName('h4');
+            for (var i = 0; i < android.length; i++) {
+                var text = android[i].innerHTML.replace("iPhone", "Android");
+                android[i].innerHTML = text;
+            }
+     //6. Написати модуль в окремому файлі currency, який буде переводити ціну в доларах в гривні
+      // і застосувати його до кожної ціни
+      // використовувати буде так
+      
+      // currency.set(data) - задає валюту 
+      // data = {
+      //   name: "ua hryvnya",
+      //   rank: 25,
+      //   symbol: "uha"
+      // }
+      // так ми задаємо курс, і сивол для формування ціни
+      // currency.convert(price) - переводить ціну в гривні
+      // приклад ковертації
+      // 100$ => 2500uah
+     var currency={
+        data:{
+          name:undefined,
+          rank: undefined,
+          symbol: undefined},
+        set : function(newData){
+          this.data=newData;
+        },
+        convert : function (price){
+          return this.data.rank*parseInt(price)+this.data.symbol;
+        }
+      }
+      currency.set({
+         name: "ua hryvnya",
+         rank: 25,
+         symbol: " UAN"
+       });
+      var elements = getElements();
+      for (var i = 0; i < elements.length; i++) {
+        var price = elements[i].getElementsByTagName("span")[0];
+        price.innerText+=" => "+currency.convert(price.innerText);
+      }
+      
+      
+    </script>
+  </body>
+</html>
+
